@@ -3,7 +3,7 @@
 
 // Must be main method with args otherwise SDL won't work
 int main(int argc, char* argv[]) {
-    std::cout << "Starting";
+    std::cout << "Starting" << std::endl;
 
     if(SDL_Init(SDL_INIT_VIDEO) < 0)
     {
@@ -12,10 +12,11 @@ int main(int argc, char* argv[]) {
     }
 
     SDL_Window *window = SDL_CreateWindow("SDL2 Window",
-                                          SDL_WINDOWPOS_CENTERED,
-                                          SDL_WINDOWPOS_CENTERED,
-                                          680, 480,
-                                          0);
+        SDL_WINDOWPOS_CENTERED,
+        SDL_WINDOWPOS_CENTERED,
+        680, 480,
+        SDL_WINDOW_RESIZABLE
+    );
 
     if(!window)
     {
@@ -33,6 +34,15 @@ int main(int argc, char* argv[]) {
 
     SDL_UpdateWindowSurface(window);
 
-    SDL_Delay(5000);
+    bool run = true;
+    while (run) {
+        SDL_Event event;
+        SDL_WaitEvent(&event);
+
+        if (event.type == SDL_QUIT) {
+            run = false;
+        }
+    }
+
     return 0;
 }
