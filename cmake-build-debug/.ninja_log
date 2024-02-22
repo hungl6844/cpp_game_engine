@@ -1,0 +1,6 @@
+# ninja log v5
+2	15	0	clean	c88d283c736d502
+3	535	7302706492519243	CMakeFiles/cpp_game_engine.dir/main.cpp.obj	157554bbde35d274
+535	627	7302706493366420	cpp_game_engine.exe	456e99e37d2e16d7
+2	272	7302708893666019	build.ninja	a3ab40506cf83ed2
+2	281	7302708893666019	build.ninja	a3ab40506cf83ed2
